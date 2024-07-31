@@ -3,3 +3,4 @@ make a following pokemon C injection code for pokemon fire red which includes a 
 
 
 make a following pokemon C injection code for pokemon fire red which includes a table to implement many pokemons and we can talk to the pokemon in overworld, use grit to compile images
+https://chatgpt.com/share/55f3f510-3d9a-4092-82fd-8be691554979
