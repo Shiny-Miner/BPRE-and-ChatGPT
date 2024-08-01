@@ -144,3 +144,29 @@ Copy code
 armips patch_script.asm
 Step 6: Test the ROM
 Run the patched ROM in an emulator like VisualBoyAdvance or on real hardware using a flash cartridge.
+
+# Making items with pokeemerald
+make a graphic in graphics gale or another art program, (someone recommend the other good program can't remember the name esprite?)
+define the graphic,  add the item constant  add template value to the items list.  (to fill in when you complete the effects/know what  everything should be)
+
+From here the process differs based on what kind of item you want to make,
+but the simple explanation is it depends on if you're making a held item,
+a battle item, or key item, and if said item is allowed to be used from the overworld.
+
+typically if its not a key item and can be used outside of battle,
+you need to make an item effect for it in the item effect table.
+
+Decide the hold effect, should it have one.
+Either use an existing effect from the hold effect table or make a new effect
+tldr, you don't necessarily  need to make a "new effect" for it to have a unique effect.
+.holdEffect = HOLD_EFFECT_ELECTRIC_POWER,
+.holdEffectParam =  20,
+
+as they are a function of the effect itself and the parameter value.
+
+
+
+for an example of how to setup
+I'd recommend searching ITEM_RARE_CANDY in the repo.
+
+if you need more than that, just keep searching similar items till you find everything.
