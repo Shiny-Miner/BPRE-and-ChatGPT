@@ -8,17 +8,15 @@ Checks the player's gender.
 Sets the rival to Leaf if the player is Red (Male).
 Sets the rival to Red if the player is Leaf (Female).
 ASM Code:
-
+```
 .thumb
 .syntax unified
 .global set_rival_gender
 set_rival_gender:
     push {r0-r2, lr}        @ Save registers
-
-[    ldr r0, =0x020370A8     @ Load player gender memory address
+    ldr r0, =0x020370A8     @ Load player gender memory address
     ldrb r0, [r0]           @ Read gender (0 = Male, 1 = Female)
-
-[    cmp r0, #0              @ Check if Male
+    cmp r0, #0              @ Check if Male
     beq set_rival_leaf      @ If Male, set Rival as Leaf
     b set_rival_red         @ If Female, set Rival as Red
 
@@ -38,14 +36,13 @@ copy_loop:
     strb r0, [r1], #1       @ Store it in rival's name memory
     subs r3, #1             @ Decrement counter
     bne copy_loop           @ Repeat until name is copied
-
-[    pop {r0-r2, lr}         @ Restore registers
+    pop {r0-r2, lr}         @ Restore registers
     bx lr                   @ Return to game
 
 .align 4
 leaf_name: .asciz "LEAF"
 red_name:  .asciz "RED"
-
+```
 
 
 # How It Works:
